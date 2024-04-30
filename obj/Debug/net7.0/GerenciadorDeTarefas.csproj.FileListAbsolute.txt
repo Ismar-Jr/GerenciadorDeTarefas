@@ -75,3 +75,4 @@ C:\Users\IsmarJunior\Documents\Curso_C#\GerenciadorDeTarefas\obj\Debug\net7.0\Ge
 C:\Users\IsmarJunior\Documents\Curso_C#\GerenciadorDeTarefas\obj\Debug\net7.0\GerenciadorDeTarefas.genruntimeconfig.cache
 C:\Users\IsmarJunior\Documents\Curso_C#\GerenciadorDeTarefas\obj\Debug\net7.0\ref\GerenciadorDeTarefas.dll
 C:\Users\IsmarJunior\Documents\Curso_C#\GerenciadorDeTarefas\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\IsmarJunior\Documents\Curso_C#\GerenciadorDeTarefas\obj\Debug\net7.0\GerenciadorDeTarefas.sourcelink.json

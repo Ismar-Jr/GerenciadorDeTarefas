@@ -1,6 +1,6 @@
 using System.Globalization;
 using GerenciadorDeTarefas.Context;
-using GerenciadorDeTarefas.Models;
+using GerenciadorDeTarefas.Entidades;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -57,21 +57,30 @@ public class TarefaController : ControllerBase
             return BadRequest("Formato de data inválido. Use o formato dd/MM/yyyy.");
         }
 
-        var tarefas = context.Tarefas.Where(x => x.Data.Date == parsedDate.Date);
+        // Busca as tarefas que correspondem à data especificada.
+        var tarefas = context.Tarefas.Where(x => x.Data.Date == parsedDate.Date)
+            .Select(t => new {
+                Id = t.Id,
+                Titulo = t.Titulo,
+                Descricao = t.Descricao,
+                Data = t.Data.ToString("dd/MM/yyyy")
+            });
+
         return Ok(tarefas);
     }
+
     [HttpGet("ObterTodas")]
     public IActionResult ObterTodas()
     {
-        var tarefas = context.Tarefas.ToList();  // Obtem todas as tarefas e as converte para uma lista
-        return Ok(tarefas);  // Retorna a lista de tarefas
+        var tarefas = context.Tarefas.ToList();
+
+        return Ok(tarefas);
     }
 
     
     [HttpPut("{id}")]
     public IActionResult Atualizar(int id, Tarefa tarefa)
     {
-        EnumStatusTarefa status = EnumStatusTarefa.Pendente;
         var tarefaBanco = context.Tarefas.Find(id);
         if (tarefaBanco == null)
         {

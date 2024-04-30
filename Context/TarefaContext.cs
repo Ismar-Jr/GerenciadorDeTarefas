@@ -1,6 +1,5 @@
-using GerenciadorDeTarefas.Models;
 using Microsoft.EntityFrameworkCore;
-
+using GerenciadorDeTarefas.Entidades;
 namespace GerenciadorDeTarefas.Context;
 
 public class TarefaContext : DbContext

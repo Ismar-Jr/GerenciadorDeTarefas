@@ -1,4 +1,4 @@
-namespace GerenciadorDeTarefas.Models;
+namespace GerenciadorDeTarefas.Entidades;
 
 public enum EnumStatusTarefa
 {
